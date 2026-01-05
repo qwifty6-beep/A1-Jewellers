@@ -149,7 +149,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(13, 13, 13, 0.4) 0%, rgba(26, 26, 26, 0.3) 100%);
+            background: linear-gradient(135deg, rgba(13, 13, 13, 0.5) 0%, rgba(26, 26, 26, 0.4) 100%);
             z-index: 1;
         }
 
@@ -157,6 +157,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
 
         .hero-content {
@@ -185,6 +186,7 @@
             letter-spacing: 1px;
             font-weight: 300;
             animation: fadeInUp 1s ease-out 0.3s both;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
         }
 
         .cta-button {
@@ -333,9 +335,8 @@
 
         .products-slide {
             min-width: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            display: flex;
+            justify-content: center;
             padding: 0 1rem;
         }
 
@@ -345,6 +346,8 @@
             overflow: hidden;
             transition: all 0.4s;
             position: relative;
+            max-width: 600px;
+            width: 100%;
         }
 
         .product-card::before {
@@ -371,7 +374,7 @@
         .product-image {
             position: relative;
             overflow: hidden;
-            height: 300px;
+            height: 400px;
         }
 
         .product-image img {
@@ -430,13 +433,6 @@
 
         #why-choose {
             background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-        }
-
-        .features-slider-container {
-            position: relative;
-            max-width: 900px;
-            margin: 3rem auto 0;
-            overflow: hidden;
         }
 
         .features-grid {
@@ -507,25 +503,6 @@
         .feature-card p {
             color: var(--text-muted);
             line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            .features-grid {
-                display: flex;
-                transition: transform 0.5s ease-in-out;
-                gap: 0;
-                margin: 0;
-            }
-
-            .feature-card {
-                min-width: 100%;
-                flex-shrink: 0;
-                margin: 0 1rem;
-            }
-
-            .features-slider-container {
-                padding: 0 1rem;
-            }
         }
 
         #contact {
@@ -637,11 +614,15 @@
 
         @media (max-width: 768px) {
             #hero {
-                height: 70vh;
+                height: 100vh;
             }
 
             .hero-slide::before {
-                background: linear-gradient(135deg, rgba(13, 13, 13, 0.5) 0%, rgba(26, 26, 26, 0.4) 100%);
+                background: linear-gradient(135deg, rgba(13, 13, 13, 0.65) 0%, rgba(26, 26, 26, 0.55) 100%);
+            }
+
+            .hero-slide img {
+                object-position: 65% center;
             }
 
             nav .container {
@@ -674,12 +655,22 @@
                 display: flex;
             }
 
+            .hero-content {
+                padding: 0 1rem;
+            }
+
             .hero-content h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             .hero-content p {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-button {
+                padding: 0.9rem 2rem;
+                font-size: 0.9rem;
             }
 
             section {
@@ -699,7 +690,11 @@
                 height: 350px;
             }
 
-            .products-slide {
+            .product-image {
+                height: 300px;
+            }
+
+            .features-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -766,9 +761,8 @@
         <div class="about-content">
             <div class="about-text">
                 <h3>Trusted Gold Manufacturing Partner</h3>
-                <p>A1 Gold is a premier gold jewellery manufacturer serving wholesalers and retailers with exceptional quality and craftsmanship. We combine traditional artistry with modern manufacturing techniques.</p>
-                <p>We specialize in creating exquisite gold jewellery that meets the highest standards of purity and design. Our B2B focus ensures consistent quality, reliable supply, and competitive pricing.</p>
-                <p>With a commitment to excellence and trust, A1 Gold has established itself as a cornerstone in the gold jewellery manufacturing industry.</p>
+                <p>A1 Gold is a premier gold jewellery manufacturer serving wholesalers and retailers with exceptional quality and craftsmanship. We combine traditional artistry with modern manufacturing techniques to create exquisite gold jewellery that meets the highest standards of purity and design.</p>
+                <p>With a commitment to excellence and trust, we specialize in B2B solutions ensuring consistent quality, reliable supply, and competitive pricing. A1 Gold has established itself as a cornerstone in the gold jewellery manufacturing industry.</p>
             </div>
             <div class="about-image">
                 <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80" alt="Gold Manufacturing Process">
@@ -787,19 +781,21 @@
                     <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80" alt="Product 1">
+                                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80" alt="Gold Necklace Collection">
                             </div>
                             <div class="product-info">
-                                <h3>Product 1</h3>
+                                <h3>Gold Necklace Collection</h3>
                                 <p>Exquisite gold necklace collection featuring intricate designs and superior craftsmanship. Perfect for retailers seeking premium pieces that captivate customers with timeless elegance and exceptional quality.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80" alt="Product 2">
+                                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80" alt="Gold Bangles">
                             </div>
                             <div class="product-info">
-                                <h3>Product 2</h3>
+                                <h3>Gold Bangles</h3>
                                 <p>Stunning gold bangles crafted with precision and attention to detail. Our manufacturing process ensures durability and shine that lasts, making these pieces ideal for wholesale distribution.</p>
                             </div>
                         </div>
@@ -807,19 +803,21 @@
                     <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80" alt="Product 3">
+                                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80" alt="Gold Earrings">
                             </div>
                             <div class="product-info">
-                                <h3>Product 3</h3>
+                                <h3>Gold Earrings</h3>
                                 <p>Premium gold earring collections that blend traditional artistry with contemporary design. Each piece is meticulously crafted to meet the highest standards of purity and aesthetic appeal.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80" alt="Product 4">
+                                <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80" alt="Gold Rings">
                             </div>
                             <div class="product-info">
-                                <h3>Product 4</h3>
+                                <h3>Gold Rings</h3>
                                 <p>Elegant gold rings featuring sophisticated designs perfect for special occasions. Our manufacturing excellence ensures each ring represents the pinnacle of gold jewellery craftsmanship.</p>
                             </div>
                         </div>
@@ -827,19 +825,21 @@
                     <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80" alt="Product 5">
+                                <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=600&q=80" alt="Gold Chains">
                             </div>
                             <div class="product-info">
-                                <h3>Product 5</h3>
+                                <h3>Gold Chains</h3>
                                 <p>Traditional gold chain collections that showcase our expertise in gold processing and design. Ideal for businesses looking to offer classic pieces with guaranteed purity and finish.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="Product 6">
+                                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="Gold Pendant Sets">
                             </div>
                             <div class="product-info">
-                                <h3>Product 6</h3>
+                                <h3>Gold Pendant Sets</h3>
                                 <p>Luxurious gold pendant sets that combine intricate detailing with superior quality. Our B2B partners trust us for consistent excellence in every piece we manufacture.</p>
                             </div>
                         </div>
@@ -847,19 +847,21 @@
                     <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&q=80" alt="Product 7">
+                                <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&q=80" alt="Gold Bracelets">
                             </div>
                             <div class="product-info">
-                                <h3>Product 7</h3>
+                                <h3>Gold Bracelets</h3>
                                 <p>Contemporary gold bracelet designs that appeal to modern sensibilities while maintaining traditional gold purity standards. Perfect for retailers targeting diverse customer preferences.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80" alt="Product 8">
+                                <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=600&q=80" alt="Gold Jewellery Sets">
                             </div>
                             <div class="product-info">
-                                <h3>Product 8</h3>
+                                <h3>Gold Jewellery Sets</h3>
                                 <p>Exclusive gold jewellery sets designed for special occasions. Our manufacturing capabilities ensure bulk orders meet delivery timelines without compromising on quality or craftsmanship.</p>
                             </div>
                         </div>
@@ -878,28 +880,26 @@
             <h2>Why Choose Us</h2>
             <p>Your Trusted Partner in Gold Manufacturing Excellence</p>
         </div>
-        <div class="features-slider-container">
-            <div class="features-grid" id="featuresGrid">
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Trusted Gold Manufacturer</h3>
-                    <p>Decades of experience in gold jewellery manufacturing with a reputation built on trust, reliability, and consistent quality delivery.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>High Purity Standards</h3>
-                    <p>We maintain the highest standards of gold purity in every piece, ensuring your customers receive authentic, certified quality products.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Serving Wholesalers & Retailers</h3>
-                    <p>Specialized B2B solutions tailored for wholesalers and retailers, with competitive pricing and flexible order quantities.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚒️</div>
-                    <h3>Premium Craftsmanship</h3>
-                    <p>Expert artisans combine traditional techniques with modern technology to create jewellery pieces that stand out in quality and design.</p>
-                </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Trusted Gold Manufacturer</h3>
+                <p>Decades of experience in gold jewellery manufacturing with a reputation built on trust, reliability, and consistent quality delivery.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>High Purity Standards</h3>
+                <p>We maintain the highest standards of gold purity in every piece, ensuring your customers receive authentic, certified quality products.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Serving Wholesalers & Retailers</h3>
+                <p>Specialized B2B solutions tailored for wholesalers and retailers, with competitive pricing and flexible order quantities.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚒️</div>
+                <h3>Premium Craftsmanship</h3>
+                <p>Expert artisans combine traditional techniques with modern technology to create jewellery pieces that stand out in quality and design.</p>
             </div>
         </div>
     </section>
@@ -959,45 +959,6 @@
         }
 
         setInterval(nextHeroSlide, 5000);
-
-        let currentFeatureSlide = 0;
-        const featuresGrid = document.getElementById('featuresGrid');
-        const featureCards = document.querySelectorAll('.feature-card');
-        let featuresInterval;
-
-        function updateFeaturesSlider() {
-            if (window.innerWidth <= 768) {
-                const translateX = -currentFeatureSlide * 100;
-                featuresGrid.style.transform = `translateX(${translateX}%)`;
-            } else {
-                featuresGrid.style.transform = 'none';
-            }
-        }
-
-        function nextFeatureSlide() {
-            if (window.innerWidth <= 768) {
-                currentFeatureSlide = (currentFeatureSlide + 1) % featureCards.length;
-                updateFeaturesSlider();
-            }
-        }
-
-        function startFeaturesSlider() {
-            if (window.innerWidth <= 768) {
-                featuresInterval = setInterval(nextFeatureSlide, 3000);
-            }
-        }
-
-        function stopFeaturesSlider() {
-            clearInterval(featuresInterval);
-        }
-
-        startFeaturesSlider();
-
-        window.addEventListener('resize', () => {
-            stopFeaturesSlider();
-            updateFeaturesSlider();
-            startFeaturesSlider();
-        });
 
         let currentProductSlide = 0;
         const productsTrack = document.getElementById('productsTrack');
