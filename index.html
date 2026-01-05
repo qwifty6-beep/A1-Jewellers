@@ -179,6 +179,23 @@
             z-index: 2;
             width: 90%;
             max-width: 900px;
+            padding: 3rem 2rem;
+            background: rgba(13, 13, 13, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: fadeInScale 1.2s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
 
         .hero-content h1 {
@@ -537,6 +554,8 @@
             background: rgba(212, 175, 55, 0.05);
             letter-spacing: 2px;
             transition: all 0.3s;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .phone-display:hover {
@@ -669,6 +688,10 @@
                 padding: 0 1rem;
             }
 
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -705,7 +728,8 @@
             }
 
             .products-slide {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
 
             .features-grid {
@@ -916,7 +940,7 @@
             <p>Let's Build a Successful Partnership Together</p>
         </div>
         <div class="contact-info">
-            <div class="phone-display">9820979463</div>
+            <a href="tel:+919820979463" class="phone-display">9820979463</a>
             <p class="contact-text">Ready to elevate your jewellery business with premium gold manufacturing? Contact us today to discuss wholesale opportunities, product catalogs, and partnership details.</p>
         </div>
     </section>
@@ -924,7 +948,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">A1 GOLD</div>
-            <div class="footer-phone">📞 9820979463</div>
+            <a href="tel:+919820979463" class="footer-phone" style="text-decoration: none; display: block;">📞 9820979463</a>
             <p class="footer-text">Premium Gold Manufacturing for Wholesalers & Retailers</p>
             <p class="footer-text" style="margin-top: 1rem; font-size: 0.85rem;">© 2026 A1 Gold. All Rights Reserved.</p>
         </div>
