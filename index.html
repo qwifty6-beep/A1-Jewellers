@@ -335,8 +335,9 @@
 
         .products-slide {
             min-width: 100%;
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
             padding: 0 1rem;
         }
 
@@ -346,7 +347,6 @@
             overflow: hidden;
             transition: all 0.4s;
             position: relative;
-            max-width: 600px;
             width: 100%;
         }
 
@@ -692,6 +692,10 @@
 
             .product-image {
                 height: 300px;
+            }
+
+            .products-slide {
+                grid-template-columns: 1fr;
             }
 
             .features-grid {
