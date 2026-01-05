@@ -42,7 +42,6 @@
             letter-spacing: 1px;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -119,7 +118,6 @@
             transition: 0.3s;
         }
 
-        /* Hero Section */
         #hero {
             position: relative;
             height: 100vh;
@@ -235,7 +233,6 @@
             }
         }
 
-        /* Section Styles */
         section {
             padding: 6rem 5%;
             max-width: 1400px;
@@ -273,7 +270,6 @@
             margin: 1.5rem auto 0;
         }
 
-        /* About Section */
         #about {
             background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
         }
@@ -316,7 +312,6 @@
             transform: scale(1.1);
         }
 
-        /* Products Section */
         #products {
             background: var(--dark-bg);
         }
@@ -433,9 +428,15 @@
             transform: scale(1.1);
         }
 
-        /* Why Choose Us */
         #why-choose {
             background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+        }
+
+        .features-slider-container {
+            position: relative;
+            max-width: 900px;
+            margin: 3rem auto 0;
+            overflow: hidden;
         }
 
         .features-grid {
@@ -508,7 +509,25 @@
             line-height: 1.6;
         }
 
-        /* Contact Section */
+        @media (max-width: 768px) {
+            .features-grid {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+                gap: 0;
+                margin: 0;
+            }
+
+            .feature-card {
+                min-width: 100%;
+                flex-shrink: 0;
+                margin: 0 1rem;
+            }
+
+            .features-slider-container {
+                padding: 0 1rem;
+            }
+        }
+
         #contact {
             background: var(--dark-bg);
             text-align: center;
@@ -545,7 +564,6 @@
             line-height: 1.8;
         }
 
-        /* Footer */
         footer {
             background: #000;
             padding: 3rem 5%;
@@ -579,7 +597,6 @@
             margin-top: 2rem;
         }
 
-        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -618,8 +635,15 @@
             }
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
+            #hero {
+                height: 70vh;
+            }
+
+            .hero-slide::before {
+                background: linear-gradient(135deg, rgba(13, 13, 13, 0.5) 0%, rgba(26, 26, 26, 0.4) 100%);
+            }
+
             nav .container {
                 padding: 0;
             }
@@ -680,11 +704,6 @@
                 gap: 2rem;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .phone-display {
                 font-size: 1.6rem;
                 padding: 1.2rem 1.5rem;
@@ -702,7 +721,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="logo">A1 GOLD</div>
@@ -721,7 +739,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="hero">
         <div class="hero-slider">
             <div class="hero-slide active">
@@ -741,7 +758,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="section-header">
             <h2>About Us</h2>
@@ -750,9 +766,9 @@
         <div class="about-content">
             <div class="about-text">
                 <h3>Trusted Gold Manufacturing Partner</h3>
-                <p>A1 Gold stands as a premier gold jewellery manufacturer, dedicated to serving wholesalers and retailers with uncompromising quality and craftsmanship. Our expertise spans decades, combining traditional artistry with modern manufacturing techniques.</p>
-                <p>We specialize in creating exquisite gold jewellery that meets the highest standards of purity and design. Our B2B focus ensures that our partners receive consistent quality, reliable supply, and competitive pricing that drives their business forward.</p>
-                <p>With a commitment to excellence, transparency, and trust, A1 Gold has established itself as a cornerstone in the gold jewellery manufacturing industry. Our state-of-the-art facilities and skilled craftsmen work tirelessly to deliver products that exceed expectations.</p>
+                <p>A1 Gold is a premier gold jewellery manufacturer serving wholesalers and retailers with exceptional quality and craftsmanship. We combine traditional artistry with modern manufacturing techniques.</p>
+                <p>We specialize in creating exquisite gold jewellery that meets the highest standards of purity and design. Our B2B focus ensures consistent quality, reliable supply, and competitive pricing.</p>
+                <p>With a commitment to excellence and trust, A1 Gold has established itself as a cornerstone in the gold jewellery manufacturing industry.</p>
             </div>
             <div class="about-image">
                 <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80" alt="Gold Manufacturing Process">
@@ -760,7 +776,6 @@
         </div>
     </section>
 
-    <!-- Products Section -->
     <section id="products">
         <div class="section-header">
             <h2>Our Products</h2>
@@ -769,7 +784,6 @@
         <div class="products-slider-container">
             <div class="products-slider">
                 <div class="products-track" id="productsTrack">
-                    <!-- Slide 1 -->
                     <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
@@ -790,7 +804,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 2 -->
                     <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
@@ -811,7 +824,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 3 -->
                     <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
@@ -832,7 +844,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 4 -->
                     <div class="products-slide">
                         <div class="product-card">
                             <div class="product-image">
@@ -862,68 +873,64 @@
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
     <section id="why-choose">
         <div class="section-header">
             <h2>Why Choose Us</h2>
             <p>Your Trusted Partner in Gold Manufacturing Excellence</p>
         </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🏆</div>
-                <h3>Trusted Gold Manufacturer</h3>
-                <p>Decades of experience in gold jewellery manufacturing with a reputation built on trust, reliability, and consistent quality delivery.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✨</div>
-                <h3>High Purity Standards</h3>
-                <p>We maintain the highest standards of gold purity in every piece, ensuring your customers receive authentic, certified quality products.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤝</div>
-                <h3>Serving Wholesalers & Retailers</h3>
-                <p>Specialized B2B solutions tailored for wholesalers and retailers, with competitive pricing and flexible order quantities.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚒️</div>
-                <h3>Premium Craftsmanship</h3>
-                <p>Expert artisans combine traditional techniques with modern technology to create jewellery pieces that stand out in quality and design.</p>
+        <div class="features-slider-container">
+            <div class="features-grid" id="featuresGrid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Trusted Gold Manufacturer</h3>
+                    <p>Decades of experience in gold jewellery manufacturing with a reputation built on trust, reliability, and consistent quality delivery.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>High Purity Standards</h3>
+                    <p>We maintain the highest standards of gold purity in every piece, ensuring your customers receive authentic, certified quality products.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Serving Wholesalers & Retailers</h3>
+                    <p>Specialized B2B solutions tailored for wholesalers and retailers, with competitive pricing and flexible order quantities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚒️</div>
+                    <h3>Premium Craftsmanship</h3>
+                    <p>Expert artisans combine traditional techniques with modern technology to create jewellery pieces that stand out in quality and design.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="section-header">
             <h2>Contact Us</h2>
             <p>Let's Build a Successful Partnership Together</p>
         </div>
         <div class="contact-info">
-            <div class="phone-display">9867223879</div>
             <div class="phone-display">9820979463</div>
             <p class="contact-text">Ready to elevate your jewellery business with premium gold manufacturing? Contact us today to discuss wholesale opportunities, product catalogs, and partnership details.</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">A1 GOLD</div>
-            <div class="footer-phone">📞 9867223879 | 9820979463</div>
+            <div class="footer-phone">📞 9820979463</div>
             <p class="footer-text">Premium Gold Manufacturing for Wholesalers & Retailers</p>
             <p class="footer-text" style="margin-top: 1rem; font-size: 0.85rem;">© 2026 A1 Gold. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919820979463" target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/919820979463?text=Hi%2C%20I'm%20interested%20in%20your%20gold%20jewellery%20manufacturing%20services.%20Please%20share%20more%20details." target="_blank" class="whatsapp-float">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.188-2.113c2.325 1.288 4.962 1.963 7.812 1.963 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.25c-2.462 0-4.85-0.675-6.963-1.95l-0.5-0.3-5.188 1.338 1.4-5.213-0.325-0.513c-1.413-2.237-2.162-4.825-2.162-7.487 0-7.8 6.35-14.15 14.15-14.15s14.15 6.35 14.15 14.15-6.35 14.15-14.15 14.15zM23.175 19.525c-0.425-0.213-2.512-1.238-2.9-1.375-0.387-0.138-0.675-0.213-0.95 0.213s-1.088 1.375-1.338 1.65c-0.25 0.275-0.487 0.313-0.912 0.1s-1.775-0.65-3.387-2.087c-1.25-1.113-2.1-2.488-2.35-2.913s-0.025-0.65 0.188-0.862c0.188-0.188 0.425-0.5 0.638-0.75s0.287-0.425 0.425-0.713c0.138-0.287 0.075-0.537-0.037-0.75s-0.95-2.287-1.3-3.137c-0.338-0.825-0.687-0.712-0.95-0.725-0.25-0.013-0.525-0.013-0.8-0.013s-0.738 0.1-1.125 0.525-1.475 1.438-1.475 3.5 1.512 4.063 1.725 4.338c0.213 0.275 2.988 4.55 7.238 6.375 1.012 0.438 1.8 0.7 2.413 0.887 1.012 0.325 1.937 0.275 2.663 0.175 0.813-0.125 2.512-1.025 2.863-2.013s0.35-1.838 0.25-2.013-0.387-0.287-0.813-0.5z"/>
         </svg>
     </a>
 
     <script>
-        // Mobile Menu Toggle
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
@@ -934,7 +941,6 @@
             navLinks.classList.remove('active');
         }
 
-        // Hero Slider
         let currentHeroSlide = 0;
         const heroSlides = document.querySelectorAll('.hero-slide');
 
@@ -952,10 +958,47 @@
             showHeroSlide(currentHeroSlide);
         }
 
-        // Auto-advance hero slider every 5 seconds
         setInterval(nextHeroSlide, 5000);
 
-        // Products Slider
+        let currentFeatureSlide = 0;
+        const featuresGrid = document.getElementById('featuresGrid');
+        const featureCards = document.querySelectorAll('.feature-card');
+        let featuresInterval;
+
+        function updateFeaturesSlider() {
+            if (window.innerWidth <= 768) {
+                const translateX = -currentFeatureSlide * 100;
+                featuresGrid.style.transform = `translateX(${translateX}%)`;
+            } else {
+                featuresGrid.style.transform = 'none';
+            }
+        }
+
+        function nextFeatureSlide() {
+            if (window.innerWidth <= 768) {
+                currentFeatureSlide = (currentFeatureSlide + 1) % featureCards.length;
+                updateFeaturesSlider();
+            }
+        }
+
+        function startFeaturesSlider() {
+            if (window.innerWidth <= 768) {
+                featuresInterval = setInterval(nextFeatureSlide, 3000);
+            }
+        }
+
+        function stopFeaturesSlider() {
+            clearInterval(featuresInterval);
+        }
+
+        startFeaturesSlider();
+
+        window.addEventListener('resize', () => {
+            stopFeaturesSlider();
+            updateFeaturesSlider();
+            startFeaturesSlider();
+        });
+
         let currentProductSlide = 0;
         const productsTrack = document.getElementById('productsTrack');
         const totalProductSlides = document.querySelectorAll('.products-slide').length;
@@ -975,7 +1018,6 @@
             updateProductSlider();
         }
 
-        // Smooth scroll offset for fixed nav
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
